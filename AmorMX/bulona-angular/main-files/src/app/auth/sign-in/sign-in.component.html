@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Acceso</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+	<header>
+		<div class="image-container">
+			<!-- Imágenes del encabezado -->
+			<img src="../../../assets/images2/logo.png" alt="Imagen 1" class="logo">
+			<img src="../../../assets/images2/VD-removebg-preview.png" alt="Imagen 4" class="effect-4">
+			<img src="../../../assets/images2/VD-removebg-preview.png" alt="Imagen 5" class="effect-5">
+			<img src="../../../assets/images2/VD-removebg-preview.png" alt="Imagen 6" class="effect-6">
+			<img src="../../../assets/images2/VD-removebg-preview.png" alt="Imagen 7" class="ca">
+			<img src="../../../assets/images2/Calavera1.png" alt="Imagen 8" class="effect-8">
+			<img src="../../../assets/images2/Calavera2.png" alt="Imagen 9" class="effect-9">
+			<img src="../../../assets/images2/calabera-removebg-preview.png" alt="Imagen 10" class="effect-10">
+			<img src="../../../assets/images2/calabera-removebg-preview.png" alt="Imagen 11" class="effect-11">
+			<img src="../../../assets/images2/flor.png" alt="Imagen 12" class="effect-12">
+			<img src="../../../assets/images2/flor.png" alt="Imagen 13" class="effect-13">
+			<img src="../../../assets/images2/flor.png" alt="Imagen 14" class="effect-14">
+			<img src="../../../assets/images2/flor.png" alt="Imagen 15" class="effect-15">
+			<img src="../../../assets/images2/flor.png" alt="Imagen 16" class="effect-16">
+			<img src="../../../assets/images2/flor.png" alt="Imagen 17" class="effect-17">
+		</div>
+	</header>
+
+	<nav>
+		<ul class="menu">
+			<li class="left">
+				<a href="../Index.html" class="icon-link">
+					<i class="fas fa-home"></i>
+					Home
+				</a>
+			</li>
+		</ul>
+	</nav><br>
+
+	<div id="home1" class="main-container access">
+		<img src="../../../assets/images2/logo.png" alt="Imagen 1" class="logo2">
+		<div class="container">
+			<section class="main-section">
+				<form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+					<h2>Acceso</h2>
+					<hr><br>
+
+					<div class="field">
+						<label for="correo">Correo:</label>
+						<input type="text" id="correo" formControlName="correo" required>
+						<div
+							*ngIf="signInForm.get('correo')?.invalid && (signInForm.get('correo')?.touched || signInForm.get('correo')?.dirty)">
+							<small *ngIf="signInForm.get('correo')?.errors?.required">El correo es requerido.</small>
+							<small *ngIf="signInForm.get('correo')?.errors?.email">El formato del correo es
+								incorrecto.</small>
+						</div>
+					</div><br>
+
+					<div class="field">
+						<label for="pass">Contraseña:</label>
+						<div class="password-container">
+							<i (click)="togglePasswordVisibility()"
+								[ngClass]="isPasswordVisible ? 'fa-solid fa-eye' : 'fa-solid fa-eye-slash'"
+								style="color: #8c8388; position: absolute; right: 26px; top: 50%; transform: translateY(-50%); cursor: pointer;">
+							</i>
+							<input [type]="isPasswordVisible ? 'text' : 'password'" id="pass"
+								formControlName="contrasena" required>
+							<div
+								*ngIf="signInForm.get('contrasena')?.invalid && (signInForm.get('contrasena')?.touched || signInForm.get('contrasena')?.dirty)">
+								<small *ngIf="signInForm.get('contrasena')?.errors?.required">La contraseña es
+									requerida.</small>
+							</div>
+						</div>
+					</div>
+
+					<div class="boton">
+						<button type="submit" [disabled]="signInForm.invalid">Acceder</button>
+					</div>
+				</form>
+
+			</section>
+		</div>
+	</div>
+</body>
+
+</html>

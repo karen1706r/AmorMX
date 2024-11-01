@@ -1,0 +1,521 @@
+ body::before {
+     content: "";
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-image: url('/assets/images2/FondoMex.png');
+     /* Ruta correcta */
+     background-size: 100% 80%;
+     /* Ancho y alto de la imagen */
+     background-repeat: no-repeat;
+     background-position: center 120px;
+     /* Mueve la imagen 50 píxeles hacia abajo */
+     opacity: 0.5;
+     z-index: 0;
+     /* Ajusta según sea necesario */
+ }
+
+
+
+ body {
+     margin: 0;
+     padding: 0;
+     background-color: rgb(252, 247, 230);
+     font-family: "Garamond", serif;
+     overflow-x: hidden;
+ }
+
+ header {
+     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+     background-color: #24283e;
+     width: 100%;
+     height: 14vh;
+     /* Puedes ajustar la altura según tus necesidades */
+     position: fixed;
+     display: flex;
+     justify-content: center;
+     /* Centrar horizontalmente el contenido del encabezado */
+     align-items: center;
+     /* Centrar verticalmente el contenido del encabezado */
+     z-index: 1000;
+ }
+
+ nav {
+     position: fixed;
+     top: 14%;
+     width: 100%;
+     z-index: 1000;
+ }
+
+
+ .image-container {
+     position: relative;
+ }
+
+ .logo {
+     width: 27%;
+     margin: 0 auto;
+     /* Centrar horizontalmente el logo en el contenedor */
+     display: block;
+     z-index: 1;
+ }
+
+ .image-container img.effect-4,
+ .image-container img.effect-5,
+ .image-container img.effect-6,
+ .image-container img.ca {
+     position: absolute;
+     width: 28%;
+ }
+
+ .image-container img.effect-4 {
+     top: -35%;
+     left: 4%;
+     transform: rotate(-20deg);
+     z-index: 1;
+ }
+
+ .image-container img.effect-5 {
+     top: -35%;
+     right: 4%;
+     transform: rotate(20deg) scaleX(-1);
+     z-index: 1;
+ }
+
+ .image-container img.effect-6 {
+     top: -35%;
+     left: -26%;
+     transform: rotate(-20deg);
+     z-index: 1;
+ }
+
+ .image-container img.ca {
+     top: -35%;
+     right: -26%;
+     transform: rotate(20deg) scaleX(-1);
+     z-index: 1;
+ }
+
+
+
+
+
+ .image-container img.effect-8,
+ .image-container img.effect-9 {
+     position: absolute;
+     width: 9%;
+ }
+
+ .image-container img.effect-8 {
+     left: 29.5%;
+     top: 3%;
+     animation: tambalear 1s infinite ease-out forwards;
+ }
+
+ .image-container img.effect-9 {
+     right: 29.5%;
+     top: 3%;
+     animation: tambalear 1s infinite ease-out forwards;
+ }
+
+
+ .image-container img.effect-10,
+ .image-container img.effect-11 {
+     position: absolute;
+     width: 6%;
+ }
+
+ .image-container img.effect-10 {
+     left: 0%;
+     top: 0%;
+     animation: tambalear 1s infinite ease-out forwards;
+ }
+
+ .image-container img.effect-11 {
+     right: 0%;
+     top: 0%;
+     animation: tambalear 1s infinite ease-out forwards;
+ }
+
+
+ @keyframes tambalear {
+     0% {
+         transform: rotate(0deg);
+     }
+
+     25% {
+         transform: rotate(5deg);
+     }
+
+     50% {
+         transform: rotate(-5deg);
+     }
+
+     75% {
+         transform: rotate(5deg);
+     }
+
+     100% {
+         transform: rotate(0deg);
+     }
+ }
+
+
+
+
+
+ .image-container img.effect-12,
+ .image-container img.effect-13,
+ .image-container img.effect-14,
+ .image-container img.effect-15,
+ .image-container img.effect-16,
+ .image-container img.effect-17 {
+     position: absolute;
+     width: 5.3%;
+ }
+
+ .image-container img.effect-12 {
+     top: 25%;
+     left: -36.5%;
+     animation: tambalear2 1s infinite ease-out forwards;
+ }
+
+ .image-container img.effect-13 {
+     top: 0.5%;
+     left: -32%;
+     animation: tambalear2 1s infinite ease-out forwards;
+ }
+
+ .image-container img.effect-14 {
+     top: 50%;
+     left: -32%;
+     animation: tambalear2 1s infinite ease-out forwards;
+ }
+
+ .image-container img.effect-15 {
+     top: 25%;
+     right: -36.5%;
+     animation: tambalear2 1s infinite ease-out forwards;
+ }
+
+ .image-container img.effect-16 {
+     top: 0.5%;
+     right: -32%;
+     animation: tambalear2 1s infinite ease-out forwards;
+ }
+
+ .image-container img.effect-17 {
+     top: 50%;
+     right: -32%;
+     animation: tambalear2 1s infinite ease-out forwards;
+ }
+
+ @keyframes tambalear2 {
+     0% {
+         transform: translateX(0) rotate(0deg);
+     }
+
+     25% {
+         transform: translateX(3px) rotate(5deg);
+     }
+
+     50% {
+         transform: translateX(-3px) rotate(-5deg);
+     }
+
+     75% {
+         transform: translateX(3px) rotate(5deg);
+     }
+
+     100% {
+         transform: translateX(0) rotate(0deg);
+     }
+ }
+
+
+
+ .icon-link {
+     text-decoration: none;
+     display: flex;
+     align-items: center;
+ }
+
+ .icon-link i {
+     color: #ee9191;
+     margin-right: 5px;
+     /* Espacio entre el ícono y el texto */
+     transition: color 0.2s;
+     /* Agrega una transición suave */
+ }
+
+ .icon-link:hover i {
+     color: #f34343;
+     /* Cambia el color del ícono al pasar el mouse por encima */
+ }
+
+ /* Estilos para el campo select */
+
+
+ ul.menu {
+     list-style: none;
+     padding: 0;
+     background-color: rgb(255, 247, 88);
+     box-shadow: 0px 4px 6px rgb(199, 115, 255);
+     justify-content: space-between;
+     display: flex;
+     margin-top: 0;
+     /* Ajusta el margen superior a 0 para eliminar el espacio en blanco */
+ }
+
+
+ ul.menu li {
+     display: inline-block;
+     position: relative;
+     margin: 0 10px;
+ }
+
+ ul.menu li a {
+
+     display: block;
+     padding: 10px 20px;
+     color: #000000;
+     text-decoration: none;
+ }
+
+ ul.menu li:hover a {
+     color: rgb(0, 107, 111)
+ }
+
+ /* Estilo submenu */
+ ul.menu li ul {
+     display: none;
+     position: absolute;
+     background-color: #555;
+ }
+
+ ul.menu li:hover ul {
+     display: block;
+ }
+
+ ul.menu li ul li {
+     display: block;
+ }
+
+ ul.menu li ul li a {
+     padding: 10px 20px;
+     color: #fff;
+     text-decoration: none;
+ }
+
+ ul.menu li ul li:hover a {
+     background-color: #777;
+ }
+
+
+
+
+ .menu li.left {
+     float: left;
+     /* Alinear "Home" a la izquierda */
+ }
+
+ .menu li.right {
+     float: right;
+     /* Alinear "Salir" a la derecha */
+ }
+
+
+
+
+ .fa-home {
+     font-size: 20px;
+     /* Personaliza el tamaño aquí */
+
+ }
+
+ .fa-right-to-bracket {
+     font-size: 20px;
+     /* Personaliza el tamaño aquí */
+
+ }
+
+ .icon-link {
+     text-decoration: none;
+     display: flex;
+     align-items: center;
+ }
+
+ .icon-link i {
+     color: #000000;
+     margin-right: 5px;
+     /* Espacio entre el ícono y el texto */
+     transition: color 0.2s;
+     /* Agrega una transición suave */
+ }
+
+ .icon-link:hover i {
+     color: rgb(115, 204, 255);
+     /* Cambia el color del ícono al pasar el mouse por encima */
+ }
+
+
+
+ body {
+     background-color: rgb(252, 247, 230);
+     font-family: "Garamond", serif;
+     margin: 0;
+     padding: 0;
+ }
+
+
+ .main-content {
+     position: absolute;
+     top: 24%;
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     width: 100%;
+     padding: 20px 0;
+ }
+
+
+ .logo2 {
+     width: 40%;
+     position: absolute;
+     top: 40%;
+     left: 5%;
+ }
+
+
+ .main-container {
+     text-align: left;
+     /* Centra el contenido horizontalmente */
+     margin-left: 13%;
+     /* Agrega margen izquierdo negativo si es necesario para mover el contenido hacia la derecha */
+     margin-top: 150px;
+     /* Opcional, agrega margen superior si es necesario */
+     width: 110%;
+ }
+
+ .container {
+     width: 120%;
+     height: 100%;
+     padding-left: 25%;
+ }
+
+
+
+
+ .main-section h2 {
+     font-size: 60px;
+     text-align: center;
+     color: #13529a;
+     margin: 2%;
+ }
+
+
+ .container h1 {
+     background-color: rgb(255, 184, 215);
+     border: 1px solid beige;
+     padding: 15px;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+ }
+
+ .main-section h2 {
+     font-size: 24px;
+     text-align: center;
+     color: #13529a;
+     margin: 2%;
+ }
+
+ .field {
+     margin-bottom: 20px;
+     position: relative;
+ }
+
+
+
+ .field .password-container {
+     position: relative;
+ }
+
+
+ label {
+     display: block;
+     font-weight: bold;
+     margin-bottom: 5px;
+ }
+
+ input[type=number]::-webkit-inner-spin-button,
+ input[type=number]::-webkit-outer-spin-button {
+     -webkit-appearance: none;
+     margin: 0;
+ }
+
+ input[type="text"],
+ input[type="email"],
+ input[type="number"],
+ input[type="password"],
+ textarea {
+     padding: 10px;
+     margin: 10px;
+     border: 1px solid rgb(199, 115, 255);
+     border-radius: 5px;
+     font-size: 16px;
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+     display: flex;
+     min-width: calc(96%);
+     max-width: calc(60% - 1%);
+ }
+
+
+ .boton Button:hover {
+     background-color: rgb(199, 115, 255);
+     border: 1px solid rgba(255, 242, 0, 0.621);
+     box-shadow: 0 4px 6px rgba(221, 193, 8, 0.466);
+     padding: 7px 18px;
+     color: rgb(0, 0, 0);
+
+ }
+
+ .boton Button {
+     background-color: rgba(255, 242, 0, 0.621);
+     box-shadow: 0px 4px 6px rgb(199, 115, 255);
+     color: rgb(0, 0, 0);
+     border: 1px solid rgba(255, 160, 160, 0.397);
+     border-radius: 4px;
+     cursor: pointer;
+     font-size: 18px;
+     transition: background-color 0.3s;
+     font-family: "Garamond", serif;
+     padding: 7px 18px;
+     /* Aumenta el espacio dentro del botón */
+ }
+
+ .boton a {
+     color: #000000;
+     text-decoration: none;
+ }
+
+
+
+
+
+ .main-section {
+     max-height: 1050px;
+     background-color: rgba(200, 224, 238, 0.932);
+     padding: 2%;
+     border: 0.1% solid beige;
+     box-shadow: 0 0 10px rgb(114, 82, 148);
+     flex: 1;
+     margin: 0.5%;
+     max-width: calc(70% - 1%);
+     width: 100%;
+     box-sizing: border-box;
+     min-width: calc(200px);
+     position: relative;
+     display: flex;
+     flex-direction: column;
+ }

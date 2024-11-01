@@ -1,0 +1,99 @@
+<header>
+	<div class="topbar d-flex align-items-center">
+		<nav class="navbar navbar-expand">
+			<div class="mobile-toggle-menu">
+				<i (click)="toggleSidebar()" class='bx bx-menu'></i>
+			</div>
+
+			<!-- Logo visible solo para Mesero, Chef y Cajero -->
+			<div *ngIf="isMesero() || isChef() || isCajero()" class="navbar-logo-container">
+				<img src="../../../assets/images2/logo.png" alt="navbar logo" class="navbar-logo"
+					style="width: 100px; height: auto;">
+			</div>
+
+			<div class="top-menu ms-auto">
+				<ul class="navbar-nav align-items-center">
+					<!-- Ícono de búsqueda móvil -->
+					<li class="nav-item mobile-search-icon">
+						<a class="nav-link" href="#" (click)="$event.preventDefault()"><i class='bx bx-search'></i></a>
+					</li>
+					<!-- Notificaciones -->
+					<li class="nav-item dropdown dropdown-large">
+						<a class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" href="#"
+							role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							<span class="alert-count">7</span><i class='bx bx-bell'></i>
+						</a>
+						<div class="dropdown-menu dropdown-menu-end">
+							<a href="#" (click)="$event.preventDefault()">
+								<div class="msg-header">
+									<p class="msg-header-title">Notifications</p>
+									<p class="msg-header-clear ms-auto">Marks all as read</p>
+								</div>
+							</a>
+							<div class="header-notifications-list" [perfectScrollbar]>
+								<!-- Aquí puedes listar las notificaciones como en el ejemplo original -->
+							</div>
+							<a href="#" (click)="$event.preventDefault()">
+								<div class="text-center msg-footer">View All Notifications</div>
+							</a>
+						</div>
+					</li>
+					<!-- Mensajes -->
+					<li class="nav-item dropdown dropdown-large">
+						<a class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" href="#"
+							role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							<span class="alert-count">8</span><i class='bx bx-comment'></i>
+						</a>
+						<div class="dropdown-menu dropdown-menu-end">
+							<a href="#" (click)="$event.preventDefault()">
+								<div class="msg-header">
+									<p class="msg-header-title">Messages</p>
+									<p class="msg-header-clear ms-auto">Marks all as read</p>
+								</div>
+							</a>
+							<div class="header-message-list" [perfectScrollbar]>
+								<!-- Aquí puedes listar los mensajes como en el ejemplo original -->
+							</div>
+							<a href="#" (click)="$event.preventDefault()">
+								<div class="text-center msg-footer">View All Messages</div>
+							</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+
+			<!-- Información del usuario -->
+			<!-- Información del usuario -->
+			<div class="user-box dropdown">
+				<a class="d-flex align-items-center nav-link dropdown-toggle dropdown-toggle-nocaret" href="#"
+					role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					<!-- Ícono de usuario siempre visible al lado del nombre -->
+					<i class="bx bx-user user-icon"></i>
+					<div class="user-info ps-3">
+						<!-- Mostrar el nombre del usuario si está disponible; si no, mostrar "Invitado" -->
+						<p class="user-name mb-0">{{ usuario?.nombre_completo || 'Invitado' }}</p>
+						<!-- Mostrar el rol del usuario si está disponible; si no, mostrar "Sin rol" -->
+					</div>
+				</a>
+				<ul class="dropdown-menu dropdown-menu-end">
+					<li><a class="dropdown-item" routerLink="/user-profile"><i
+								class="bx bx-user"></i><span>Profile</span></a></li>
+					<li><a class="dropdown-item" routerLink="/ecommerce/orders"><i
+								class="bx bx-cog"></i><span>Orders</span></a></li>
+					<li><a class="dropdown-item" routerLink="/dashboard/e-commerce"><i
+								class='bx bx-home-circle'></i><span>Dashboard</span></a></li>
+					<li><a class="dropdown-item" routerLink="/earnings"><i
+								class='bx bx-dollar-circle'></i><span>Earnings</span></a></li>
+					<li><a class="dropdown-item" routerLink="/downloads"><i
+								class='bx bx-download'></i><span>Downloads</span></a></li>
+					<li>
+						<div class="dropdown-divider mb-0"></div>
+					</li>
+					<li><a class="dropdown-item" href="#" (click)="logout()"><i
+								class='bx bx-log-out-circle'></i><span>Logout</span></a></li>
+				</ul>
+			</div>
+
+		</nav>
+	</div>
+</header>

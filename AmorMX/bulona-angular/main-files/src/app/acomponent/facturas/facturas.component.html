@@ -1,0 +1,36 @@
+<div class="factura-container">
+    <h2>Factura del Pedido - Mesa {{ numeroMesa }}</h2>
+    <p><strong>Fecha y Hora:</strong> {{ fecha_hora | date: 'dd/MM/yyyy HH:mm' }}</p>
+
+    <h3>Pedidos de la Mesa</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre Plato</th>
+                <th>Cantidad</th>
+                <th>Precio/u</th>
+                <th>Precio Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pedido of pedidos_por_mesa">
+                <td>{{ pedido.nombre }}</td>
+                <td>{{ pedido.cantidad }}</td>
+                <td>{{ pedido.precio | currency }}</td>
+                <td>{{ (pedido.precio * pedido.cantidad) | currency }}</td>
+            </tr>
+            <tr>
+                <td colspan="3" class="text-right"><strong>Total:</strong></td>
+                <td><strong>{{ totalFactura | currency }}</strong></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Botón para pagar la factura -->
+    <!-- <button (click)="pagarFactura()" class="btn btn-primary">Pagar</button> -->
+
+    <button type="submit" class="btn2" (click)="pagarFactura()">
+        <i class="icono-pagar bi bi-credit-card"></i>
+        <span>Pagar</span>
+    </button>
+</div>
